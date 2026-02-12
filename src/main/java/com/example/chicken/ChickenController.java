@@ -57,5 +57,7 @@ class ChickenController {
 
     @DeleteMapping("/{id}")
     public void deleteChicken(@PathVariable Long id) {
+        String sql="DELETE FROM chickens WHERE id = ?";
+        jdbcTemplate.update(sql, id);
     }
 }
